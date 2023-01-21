@@ -1,0 +1,93 @@
+<?php
+
+if (isset($_POST['submit'])) {
+  $secret = "6LcewyYeAAAAABYEtAM74o4mLAPYcNLmxvkMP7gW";
+  $response = $_POST['g-recaptcha-response'];
+  $remoteip = $_SERVER['REMOTE_ADDR'];
+  $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
+  $data = file_get_contents($url);
+  $row = json_decode($data, true);
+
+
+?>
+
+    <head>
+        <title>SignUp</title>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+
+    <body>
+
+        <div class="box" id="box">
+            <form action="/register" method="POST">
+
+                <div style="font-size:30px ; margin: 15px; color: black; ">SignUp</div>
+
+                <input id="text" type="email" placeholder=" User Email " name="email"><br><br>
+
+                <input id="text" type="text" placeholder=" First Name " name="first_name"><br><br>
+
+                <input id="text" type="text" placeholder=" Middle Name " name="middle_name"><br><br>
+
+                <input id="text" type="text" placeholder=" Last Name " name="last_name"><br><br>
+
+                <input id="text" type="password" placeholder=" Password " name="password"><br><br>
+
+                <form method="post" class="container">
+
+                    <br>
+                    <div class="row">
+                        <div class="g-recaptcha" data-sitekey="6LcewyYeAAAAANL4NUHGpAXKh2k5dAmH1mXqzF7k"></div>
+                    </div>
+                    <br><input type="submit" value="Register" name="submit" id="button"><br><br>
+                </form>
+
+                <a href="/login">Login</a><br><br>
+
+            </form>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+
+    <style>
+        body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            background-image: url('img.jpg');
+        }
+        
+        #text {
+            height: 40px;
+            border-radius: 5px;
+            padding: 4px;
+            border: solid thin #aaa;
+            width: 100%;
+        }
+        
+        #button {
+            background: #ABB;
+            height: 30px;
+            line-height: 20px;
+            border: 4px white;
+            display: inline-block;
+            float: none;
+            text-align: center;
+            width: 120px;
+            padding: 0px!important;
+            font-size: 14px;
+            color: #fff;
+        }
+        
+        #box {
+            width: 300px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            text-align: center;
+            margin-top: 5%;
+            font-family: 'Century Gothic', sans-serif;
+        }
+    </style>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="products.css">
+    <title>Products</title>
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+
+                <nav>
+
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+                    <label class="logo">PEN & PEN</label>
+                    <ul>
+
+                        <li><a href="index.html">HOME</a></li>
+                        <li class="active"><a href="products.html">Product Gallery</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <!-------- Featured Profucts --------->
+            <h1><i class="fa fa-shopping-cart">Cart</i></h1>
+            <section>
+                <div class="small-container">
+                    <h2 class="title">Featured Products</h2>
+                    <div class="row">
+
+                        <div class="col-4">
+                            <img src="images/4.JPG">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            <h4>Blue Pen & Pen</h4>
+                            <p>PHP20.00</p>
+                            <p>0.05mm</p>
+                            <span></span>
+                            <button>Add-Cart</button>
+                        </div>
+
+
+                        <div class="col-4">
+                            <img src="images/1.JPG">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>Black Pen & Pen</h4>
+                            <p>PHP20.00</p>
+                            <p>0.05mm</p>
+                            <button>Add-Cart</button>
+                        </div>
+
+
+                        <div class="col-4">
+                            <img src="images/2.JPG">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <h4>Black Pen & Pen</h4>
+                            <p>PHP20.00</p>
+                            <p>0.5mm</p>
+                            <span></span>
+                            <button>Add-Cart</button>
+                        </div>
+
+
+                        <div class="col-4">
+                            <img src="images/3.JPG">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+
+                            <h4>Blue Pen & Pen</h4>
+                            <p>PHP20.00</p>
+                            <p>0.5mm</p>
+                            <span></span>
+                            <button>Add-Cart</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+            <div class="select">
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        text-transform: capitalize;
+    }
+    
+    body {
+        background-color: white;
+        background-size: cover;
+        height: calc(100vh - 80px);
+        font-family: montsrrat;
+    }
+    
+    nav {
+        background: #000000;
+        width: 100%;
+        height: 80px;
+    }
+    
+    label.logo {
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    
+    nav ul {
+        float: right;
+        margin: right 20px;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+    
+    nav ul li a {
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+    
+    ul li a:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    ul li.active a {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .checkbtn {
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media (max-width: 95px) {
+        label.logo {
+            font-size: 30px;
+            padding-left: 50px;
+        }
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 858px) {
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 80px;
+            left: -100%;
+            background: #2c3e50;
+            text-align: center;
+            transition: all .5s;
+        }
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        a:hower,
+        a.active {
+            background: none;
+            color: #0082e6;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+    }
+    
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transition: 0.5s;
+    }
+    
+    .col-4 {
+        flex-basis: 40%;
+        padding: 20px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 1s;
+    }
+    
+    .col-4 img {
+        height: 100%;
+        transition: 0.s;
+        width: 100%;
+    }
+    
+    .col-4:hover {
+        transform: translateY(-10px);
+    }
+    
+    .title {
+        text-align: center;
+        font-size: 60px;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: rgb(0, 0, 0);
+    }
+    
+    .title::after {
+        content: '';
+        background: #7e7c7c;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    h4 {
+        color: #555;
+        font-weight: normal;
+    }
+    
+    .col-4 p {
+        font-size: 14px;
+    }
+    
+    .col-4 .fas {
+        color: #ff523b;
+    }
+    
+    h1 {
+        width: 3%;
+        position: relative;
+        top: 60px;
+        left: 90%;
+        cursor: pointer;
+    }
+    
+    h1:before {
+        content: attr(data-count);
+        position: absolute;
+        color: white;
+        right: 16px;
+        font-size: 15px;
+        text-align: center;
+        top: -12px;
+        width: 20px;
+        height: 15px;
+        background: red;
+        border-radius: 50%;
+        opacity: 0;
+    }
+    
+    h1.zero:before {
+        opacity: 1;
+    }
+    
+    p {
+        margin: 3px;
+    }
+    
+    h4 {
+        width: 50px;
+        padding: 5px;
+        margin: 10px;
+        font-size: 15px;
+    }
+    
+    button {
+        padding: 5px;
+        background: red;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        color: #fafafa;
+        cursor: pointer;
+    }
+    
+    section div span {
+        position: absolute;
+        top: 14px;
+        left: 13px;
+        width: 300px;
+        height: 186px;
+        display: none;
+    }
+    
+    section div span img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .select {
+        width: 65%;
+        height: 1000px;
+        padding: 5%;
+        background: #222;
+        position: absolute;
+        top: -1000px;
+        left: 20%;
+        transition: 0.5s;
+        overflow-y: auto;
+        margin: auto;
+    }
+    
+    .select.display {
+        top: 10px;
+        scroll-behavior: smooth;
+    }
+    
+    .select div {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        padding: 5px;
+        position: relative;
+        margin: 5px auto;
+    }
+    
+    .select div img {
+        width: 300px;
+        height: 100%;
+    }
+    
+    .select div p {
+        padding: 35px;
+        color: white;
+    }
+    
+    .select div h4,
+    .select div button {
+        position: absolute;
+        left: 45%;
+        top: 50%;
+        color: white;
+    }
+    
+    .select div button {
+        left: 60%;
+        top: 55%;
+    }
+    
+    .select div span {
+        display: none;
+    }
+    /*----- Footer ------*/
+</style>
+
+</html>
+
+<script type="text/javascript">
+    var noti = document.querySelector('h1');
+    var select = document.querySelector('.select');
+    var button = document.getElementsByTagName('button');
+    for (but of button) {
+        but.addEventListener('click', (e) => {
+            var add = Number(noti.getAttribute('data-count') || 0);
+            noti.setAttribute('data-count', add + 1);
+            noti.classList.add('zero');
+
+            // copy and past elements//
+
+            var parent = e.target.parentNode;
+            var clone = parent.cloneNode(true);
+            select.appendChild(clone);
+            clone.lastElementChild.innerText = "Buy-now";
+            if (clone) {
+                noti.onclick = () => {
+                    select.classList.toggle('display');
+                }
+            }
+
+        })
+    }
+</script>

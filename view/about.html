@@ -1,0 +1,240 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!------CSS Start------>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            text-transform: capitalize;
+        }
+        
+        body {
+            font-family: montsrrat;
+        }
+        
+        nav {
+            background: #ffffff;
+            width: 100%;
+            height: 80px;
+        }
+        
+        label.logo {
+            color: rgb(0, 0, 0);
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            float: right;
+            margin: right 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        
+        ul li a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        ul li.active a {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        @media (max-width: 95px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 858px) {
+            .checkbtn {
+                display: block;
+            }
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 80px;
+                left: -100%;
+                background: #2c3e50;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a {
+                font-size: 20px;
+            }
+            a:hower,
+            a.active {
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+        
+        section {
+            background: rgb(0, 0, 0);
+            background-size: cover;
+            height: 100vh;
+        }
+        /*----- About ------*/
+        
+        .container {
+            margin: auto;
+        }
+        
+        .small-container {
+            width: 85%;
+            margin: center;
+            padding-top: 50px;
+        }
+        
+        .col-3 {
+            color: rgb(255, 255, 255);
+            font-family: helvetica;
+            font-size: 25px;
+            flex-basis: 25%;
+            padding: 30px;
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+        
+        .col-3 h3 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .col-3 p {
+            color: rgb(255, 255, 255);
+        }
+        /*----- Footer ------*/
+    </style>
+
+    <!----- End Of CSS ------>
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+                    <label class="logo">PEN & PEN</label>
+
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="products.html"> Product Gallery</a></li>
+                        <li class="active"><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    </ul>
+                </nav>
+
+                <!------ About ----->
+                <section>
+                    <div class="testimonial">
+                        <div class="small-container">
+                            <div class="row">
+                                <div class="col-3">
+                                    <h2>About Company</h2>
+                                    <p> <br>The PEN & PEN is a marketing company that offers a quality pen at a reasonable price. There are three different ink colors available for the pen: blue, red, and black. The name of the product is derived from the
+                                        renowned band BEN & BEN; The company came up with this name idea for the product since the name sounded like a well-known band. To assist our customers in having a quality pen for their writing and a comfortable
+                                        pen for their priceless hands. <br></p>
+                                </div>
+                                <div class="col-3">
+                                    <h2>Vision</h2>
+                                    <p>In order to enable consumers express their ideas through writing with the product pen, the company is devoted to offering a good and better pen.</p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+
+            </section>
+
+        </div>
+    </div>
+    </div>
+
+    <!------- footer ------->
+
+
+
+</body>
+
+</html>

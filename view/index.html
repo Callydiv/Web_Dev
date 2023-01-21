@@ -1,0 +1,209 @@
+<!DOCTYPE>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
+
+    <title>Welcome</title>
+
+</head>
+
+<body>
+
+
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+                    <label class="logo">PEN & PEN</label>
+                    <ul>
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <li><a href="products.html">Product Gallery</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+
+                    </ul>
+
+
+                </nav>
+                <section>
+                    <div class="row">
+                        <div class="col-2">
+                            <h1>"The <span> Pen </span> Is <br>The <span>Tongue of your mind</span>"</h1>
+
+                            <p>- Miguel de Cervantes</p>
+
+                        </div>
+
+                        <div class="col-2">
+                            <img src="images/logo.png ">
+                        </div>
+
+                </section>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        text-transform: capitalize;
+    }
+    
+    body {
+        background: img src="background.jpg /" no-repeat;
+        background-size: cover;
+        height: calc(100vh - 80px);
+        font-family: montsrrat;
+    }
+    
+    nav {
+        background: hsl(0, 0%, 100%);
+        width: 100%;
+        height: 80px;
+    }
+    
+    label.logo {
+        color: rgb(0, 0, 0);
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    
+    nav ul {
+        float: right;
+        margin: right 20px;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+    
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        font-size: 17px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+    
+    ul li a:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    ul li.active a {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+    
+    .checkbtn {
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media (max-width: 95px) {
+        label.logo {
+            font-size: 30px;
+            padding-left: 50px;
+        }
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 858px) {
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 80px;
+            left: -100%;
+            background: #2c3e50;
+            text-align: center;
+            transition: all .5s;
+        }
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        a:hower,
+        a.active {
+            background: none;
+            color: #0082e6;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+    }
+    
+    section {
+        background-color: rgb(0, 0, 0);
+        background-size: cover;
+        height: 100vh;
+    }
+    
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+    
+    .col-2 {
+        flex-basis: 25%;
+        color: #fff;
+        font-family: helvetica;
+        text-align: center;
+        font-size: 40px;
+        flex-basis: 50%;
+        min-width: 300px;
+        margin-bottom: 50px;
+    }
+    
+    .col-2 h1 span {
+        color: rgb(247, 242, 0);
+    }
+    
+    .col-2 img {
+        max-width: 100%;
+        padding: 50px 0;
+    }
+</style>
+
+</html>

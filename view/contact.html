@@ -1,0 +1,284 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!------CSS Start------>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: rgb(248, 248, 248);
+            font-family: montsrrat;
+        }
+        
+        nav {
+            background: #000000;
+            width: 100%;
+            height: 80px;
+        }
+        
+        label.logo {
+            color: rgb(255, 255, 255);
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            float: right;
+            margin: right 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: rgb(255, 255, 255);
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        
+        ul li a:hover {
+            background-color: rgb(255, 255, 255);
+            color: #000;
+        }
+        
+        ul li.active a {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        @media (max-width: 95px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 858px) {
+            .checkbtn {
+                display: block;
+            }
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 80px;
+                left: -100%;
+                background: #2c3e50;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a {
+                font-size: 20px;
+            }
+            a:hower,
+            a.active {
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            min-height: 50vh;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 40px;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: rgb(0, 0, 0);
+        }
+        
+        .title::after {
+            content: '';
+            background: #fc6500;
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .card {
+            background: #777171;
+            padding: 0 20px;
+            margin: 0 15px;
+            width: calc(35% - 17px);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: none;
+        }
+        
+        .card-icon {
+            font-size: 20px;
+            background: #ff6348;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px !important;
+            border-radius: 50%;
+            transition: 0.3s linear;
+        }
+        
+        .card:hover .card-icon {
+            background: none;
+            color: #ff6348;
+            transform: scale(1.6);
+        }
+        
+        .card p {
+            margin-top: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            max-height: 0;
+            opacity: 0;
+            transition: 0.3s linear;
+        }
+        
+        .card:hover p {
+            max-height: 40px;
+            opacity: 1;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .contact-info {
+                flex-direction: column;
+            }
+            .card {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px 0;
+            }
+        }
+    </style>
+
+    <!------CSS End------>
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+                    <label class="logo">PEN & PEN</label>
+
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="products.html"> FEATURED PRODUCTS</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li class="active"><a href="contact.html">Contact</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+
+
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <h2 class="title">CONTACT</h2>
+
+
+        <!------- Contact Info ------->
+        <div class="contact-info">
+
+            <div class="card">
+                <i class="card-icon far fa-thumbs-up"></i>
+                <p>Facebook Page</p>
+                <p>https://web.facebook.com/profile.php?id=100087108632839</p>
+            </div>
+
+            <div class="card">
+                <i class="card-icon fas fa-mobile"></i>
+                <p>Mobile Number</p>
+                <p>0965-911-4643</p>
+            </div>
+
+            <div class="card">
+                <i class="card-icon fas fa-map-marker-alt"></i>
+                <P>Location</P>
+                <p>Bagontaas, Valencia City, Bukidnon, 8709.</p>
+            </div>
+        </div>
+    </div>
+    <h2 class="title"></h2>
+
+</body>
+
+</html>

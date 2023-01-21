@@ -1,0 +1,64 @@
+<head>
+    <title>Login</title>
+</head>
+
+
+<body>
+
+    <div class="box" id="box">
+
+        <form action="/login" method="POST">
+            <div style="font-size:30px ; margin: 15px; color: black; ">Login</div>
+
+            <input id="text" type="text" placeholder="Email" name="email"><br><br>
+
+            <input id="text" type="password" placeholder="Password" name="password"><br><br>
+
+            <input type="submit" value="Login" id="button"><br><br>
+
+            <a href="/register">Register</a><br><br>
+
+        </form>
+    </div>
+</body>
+
+<style>
+    body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        place-items: center;
+        background-image: url('img.jpg');
+    }
+    
+    #text {
+        height: 40px;
+        border-radius: 5px;
+        padding: 4px;
+        border: solid thin #aaa;
+        width: 100%;
+    }
+    
+    #button {
+        background: #ABB;
+        height: 30px;
+        line-height: 20px;
+        border: 4px white;
+        display: inline-block;
+        float: none;
+        text-align: center;
+        width: 120px;
+        padding: 0px!important;
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    #box {
+        width: 300px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 30px;
+        text-align: center;
+        margin-top: 5%;
+        font-family: 'Century Gothic', sans-serif;
+    }
+</style>
